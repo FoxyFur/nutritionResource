@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Table template</h1>
+    <div class="content">
     <table>
       <caption>Refrigrator and Freezer Temperatures</caption>
       <tr>
@@ -18,8 +19,15 @@
         <td>0°F</td>
       </tr>
     </table>
+    </div>
     <style>
-      table, td {
+      .content {
+        display: grid;
+        place-items: center;}
+      html {
+        font-size: clamp(2.5rem, 5vw, 7rem);}
+      
+      table, td, tr {
         border-top: 1px solid #999999;}
       
       tbody tr:nth-child(odd) { 
