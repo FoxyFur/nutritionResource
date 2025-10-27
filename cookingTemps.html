@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Table template</title>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Proper cooking temperatures for certain food groups and the time these internal temperatures must be maintained for food safety</h1>
+    <table>
+      <caption>
+        Food safety cooking temperatures for their respective foods according to FDA Food Code 2022. Further information and specifics can be found in the FDA Food Code 2022 release on the FDA's website.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Food/Food group</th>
+          <th scope="col">Cooking Temperature</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Intact meats, fish, eggs</th>
+          <td>145°F</td>
+          <td>≥15 seconds</td>
+        </tr>
+        <tr>
+          <th scope="row">Ground Meats</th>
+          <td>155°F</td>
+          <td>≥17 seconds</td>
+        </tr>
+        <tr>
+          <th scope="row">Poultry</th>
+          <td>165°F</td>
+          <td>>1 second</td>
+        </tr>
+      </tbody>
+    </table>
+    <style>
+      .content {
+        display: grid;
+        place-items: center;}
+      html {
+        font-family: "Helvetica", "Arial", sans-serif;}
+
+      table {
+        table-layout: fixed;
+        width: 90%;
+        margin: 10px auto;
+        border-collapse: collapse;
+        border: 1px solid #999999;}
+
+      th, td {
+        vertical-align: top;
+        text-align: center;
+        padding: 0.6em;
+        border-bottom: 1px solid #999999;}
+
+    tbody tr:nth-child(odd) {
+      background-color: #eeeeee;}
+
+    caption {
+      padding: 1em;
+      font-style: italic;
+      caption-side: bottom;
+      letter-spacing: 1px;}
+    </style>
+  </body>
+</html>
