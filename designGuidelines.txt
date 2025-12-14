@@ -1,0 +1,4 @@
+1.Add alt text to image describing image or declare that the image is decorative
+2.Use contrasting colors and a contrast checker
+3.Color and underline HTML links
+4.Specify target webpage for links
