@@ -12,7 +12,20 @@
   
         <input type='number' id='v1' placeholder='Age' style='width: 120px;' oninput='calc()'>
         <br>
-        <input type='number' id='v2' placeholder='Weight(lbs)' style='width: 120px;' oninput='calc()'>
+        <input type='number' id='v2' placeholder='Weight(lbs)' style='width: 120px;' oninput='calc()'><br>
+  
+        <label>Work PAL</label>
+        <select id='wpal'>
+          <option value='low'>Sedentary</option>
+          <option value='medium'>Medium</option>
+          <option value='high'>High</option>
+        </select><br>
+        <label>Home PAL</label>
+        <select id='hpal'>
+          <option value='low'>Sedentary</option>
+          <option value='medium'>Medium</option>
+          <option value='high'>High</option>
+        </select><br>
         <p style='margin-top: 10px; font-weight: bold;'>Result: <span id='res'>0</span></p>
 
       </div>
