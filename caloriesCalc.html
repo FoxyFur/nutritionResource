@@ -4,16 +4,29 @@
     <html>
     <body style='font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0;'>
       <div style='text-align: center;'>
-        <input type='number' id='v1' placeholder='Value' style='width: 60px;' oninput='calc()'>
-        <span> &times; </span>
-        <input type='number' id='v2' value='2' style='width: 60px;' oninput='calc()'>
+        <label>Calorie Calculator</label><br>
+        <select id='mf'>
+          <option value='male'>Male</option>
+          <option value='female'>Female</option>
+        </select><br>
+  
+        <input type='number' id='v1' placeholder='Age' style='width: 120px;' oninput='calc()'>
+        <br>
+        <input type='number' id='v2' placeholder='Weight(lbs)' style='width: 120px;' oninput='calc()'>
         <p style='margin-top: 10px; font-weight: bold;'>Result: <span id='res'>0</span></p>
+
       </div>
       <script>
         function calc() {
+          const mfr = document.getElementById('mf').value;
           const n1 = document.getElementById('v1').value || 0;
           const n2 = document.getElementById('v2').value || 0;
-          document.getElementById('res').innerText = n1 * n2;
+          if (mfr == 'male') {
+            document.getElementById('res').innerText = mfr;
+          } else {
+            document.getElementById('res').innerText = mfr;
+          }
+          
         }
       </script>
     </body>
