@@ -34,6 +34,8 @@
             const n1 = document.getElementById('v1').value || 0;
             const n2 = document.getElementById('v2').value || 0;
             let palf;
+            let weight = n2 * 0.453592;
+            let result = 0;
             //PAL Factor Calculation
             if(wpal=='low') {
                 if(hpal=='low'){if(mfr=='male'){palf=1.4}else{palf=1.4}}
@@ -47,7 +49,21 @@
                 if(hpal=='low'){if(mfr=='male'){palf=1.7}else{palf=1.5}}
                 else if(hpal=='moderate'){if(mfr=='male'){palf=1.8}else{palf=1.6}}
                 else{if(mfr=='male'){palf=1.9}else{palf=1.7}}}
-          document.getElementById('res').innerText = palf;
+            if(mfr=='male') {if(n1<3){result=0.255*weight-0.141}
+                             else if(n1>=3 && n1<10) {result=0.0937*weight+2.15}
+                             else if(n1>=10 && n1<18) {result=0.0769*weight+2.43}
+                             else if(n1>=18 && n1<30) {result=0.0669*weight+2.28}
+                             else if(n1>=30 && n1<60) {result=0.0592*weight+2.48}
+                             else{result=0.0563*weight+2.15}
+                            }
+            else {if(n1<3){result=0.246*weight-0.0965}
+                             else if(n1>=3 && n1<10) {result=0.0842*weight+2.12}
+                             else if(n1>=10 && n1<18) {result=0.0465*weight+3.18}
+                             else if(n1>=18 && n1<30) {result=0.0546*weight+2.33}
+                             else if(n1>=30 && n1<60) {result=0.0407*weight+2.90}
+                             else{result=0.0424*weight+2.38}}
+            result = result * 239 * palf;
+            document.getElementById('res').innerText = result;
         }
       </script>
     </body>
