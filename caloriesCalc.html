@@ -28,17 +28,18 @@
       </div>
       <script>
         function calc() {
-          const mfr = document.getElementById('mf').value;
-          const wpal = document.getElementById('wpal').value;
-          const hpal = document.getElementById('hpal').value;
-          const n1 = document.getElementById('v1').value || 0;
-          const n2 = document.getElementById('v2').value || 0;
-          if (mfr == 'male') {
-            document.getElementById('res').innerText = mfr;
-          } else {
-            document.getElementById('res').innerText = mfr;
-          }
-          
+            const mfr = document.getElementById('mf').value;
+            const wpal = document.getElementById('wpal').value;
+            const hpal = document.getElementById('hpal').value;
+            const n1 = document.getElementById('v1').value || 0;
+            const n2 = document.getElementById('v2').value || 0;
+            let palf;
+            //PAL Factor Calculation
+            if(wpal=='low') {
+                if(hpal=='low'){if(mfr=='male'){palf=1.4}else{palf=1.4}}
+                else if(hpal=='moderate'){if(mfr=='male'){palf=1.5}else{palf=1.5}}
+                else{if(mfr=='male'){palf=1.6}else{palf=1.6}}}
+          document.getElementById('res').innerText = palf;
         }
       </script>
     </body>
