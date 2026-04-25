@@ -2,30 +2,30 @@
     <body style='font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0;'>
       <div style='text-align: center;'>
         <label>Calorie Calculator</label><br>
-        <select id='mf'>
+        <label>Gender:</label>
+        <select id='mf' oninput='calc()'>
           <option value='male'>Male</option>
           <option value='female'>Female</option>
         </select><br>
   
+        <label>Work PAL:</label>
+        <select id='wpal' oninput='calc()'>
+          <option value='low'>Sedentary</option>
+          <option value='moderate'>Moderate</option>
+          <option value='high'>High</option>
+        </select><br>
+        <label>Home PAL:</label>
+        <select id='hpal' oninput='calc()'>
+          <option value='low'>Sedentary</option>
+          <option value='moderate'>Moderate</option>
+          <option value='high'>High</option>
+        </select><br>
         <input type='number' id='v1' placeholder='Age' style='width: 120px;' oninput='calc()'>
         <br>
         <input type='number' id='v2' placeholder='Weight(lbs)' style='width: 120px;' oninput='calc()'><br>
-  
-        <label>Work PAL</label>
-        <select id='wpal'>
-          <option value='low'>Sedentary</option>
-          <option value='moderate'>Moderate</option>
-          <option value='high'>High</option>
-        </select><br>
-        <label>Home PAL</label>
-        <select id='hpal'>
-          <option value='low'>Sedentary</option>
-          <option value='moderate'>Moderate</option>
-          <option value='high'>High</option>
-        </select><br>
-        <p style='margin-top: 10px; font-weight: bold;'>Result: <span id='res'>0</span></p>
-
+        <p style='margin-top: 10px; font-weight: bold;'>Daily Caloric Needs: <span id='res'>0</span></p>
       </div>
+        
       <script>
         function calc() {
             const mfr = document.getElementById('mf').value;
@@ -63,7 +63,7 @@
                              else if(n1>=30 && n1<60) {result=0.0407*weight+2.90}
                              else{result=0.0424*weight+2.38}}
             result = result * 239 * palf;
-            document.getElementById('res').innerText = result;
+            document.getElementById('res').innerText = Math.round(result);
         }
       </script>
     </body>
